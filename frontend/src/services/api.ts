@@ -1,6 +1,9 @@
 import type { Chapter, ChapterListItem, Record as GameRecord, Progress, User } from '../types';
 
-const API_BASE = 'http://localhost:3001/api';
+// 根据环境选择 API 地址
+const API_BASE = import.meta.env.PROD
+  ? 'https://typing-game-production-b46f.up.railway.app/api'
+  : 'http://localhost:3001/api';
 
 // 获取存储的 token
 function getToken(): string | null {
