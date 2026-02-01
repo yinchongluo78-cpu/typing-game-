@@ -1,11 +1,14 @@
 import { PrismaClient } from '@prisma/client';
 
-// Debug: log DATABASE_URL (masked)
-const dbUrl = process.env.DATABASE_URL || '';
-const maskedUrl = dbUrl.replace(/:[^:@]+@/, ':****@');
-console.log('DATABASE_URL (masked):', maskedUrl);
-console.log('DATABASE_URL length:', dbUrl.length);
+// 直接设置数据库连接（绕过环境变量问题）
+const DATABASE_URL = 'postgresql://postgres.yjcyblvjfedgubcwdgod:lyc15974388414@aws-1-ap-south-1.pooler.supabase.com:6543/postgres?pgbouncer=true';
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: DATABASE_URL,
+    },
+  },
+});
 
 export default prisma;
