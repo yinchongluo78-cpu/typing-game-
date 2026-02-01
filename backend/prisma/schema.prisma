@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 用户表
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  nickname  String
+  avatar    String?
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  records   Record[]
+  progress  Progress[]
+
+  @@map("users")
+}
+
+// 章节表
+model Chapter {
+  id        String   @id @default(uuid())
+  name      String
+  order     Int      @unique
+  sentences Json     // [{id, content, translation?}]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  records   Record[]
+  progress  Progress[]
+
+  @@map("chapters")
+}
+
+// 练习记录表
+model Record {
+  id         String   @id @default(uuid())
+  userId     String
+  chapterId  String
+  wpm        Float    // 每分钟字数
+  accuracy   Float    // 正确率 (0-100)
+  duration   Int      // 用时（秒）
+  errorCount Int      // 错误次数
+  errors     Json?    // [{position, expected, actual}]
+  createdAt  DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([chapterId])
+  @@map("records")
+}
+
+// 用户进度表
+model Progress {
+  id           String    @id @default(uuid())
+  userId       String
+  chapterId    String
+  status       String    @default("not_started") // not_started, in_progress, completed
+  bestWpm      Float?
+  bestAccuracy Float?
+  lastPlayedAt DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, chapterId])
+  @@index([userId])
+  @@index([chapterId])
+  @@map("progress")
+}

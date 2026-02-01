@@ -1,0 +1,62 @@
+[
+  {
+    "id": "chapter-1",
+    "name": "Unit 1 - Greetings",
+    "order": 1,
+    "sentences": [
+      { "id": "s1-1", "content": "Hello, how are you?", "translation": "你好，你好吗？" },
+      { "id": "s1-2", "content": "I am fine, thank you.", "translation": "我很好，谢谢。" },
+      { "id": "s1-3", "content": "Nice to meet you.", "translation": "很高兴认识你。" },
+      { "id": "s1-4", "content": "What is your name?", "translation": "你叫什么名字？" },
+      { "id": "s1-5", "content": "My name is Tom.", "translation": "我叫汤姆。" }
+    ]
+  },
+  {
+    "id": "chapter-2",
+    "name": "Unit 2 - Family",
+    "order": 2,
+    "sentences": [
+      { "id": "s2-1", "content": "This is my family.", "translation": "这是我的家人。" },
+      { "id": "s2-2", "content": "I have a brother and a sister.", "translation": "我有一个哥哥和一个姐姐。" },
+      { "id": "s2-3", "content": "My father is a teacher.", "translation": "我爸爸是一名老师。" },
+      { "id": "s2-4", "content": "My mother works in a hospital.", "translation": "我妈妈在医院工作。" },
+      { "id": "s2-5", "content": "We live in a big house.", "translation": "我们住在一栋大房子里。" }
+    ]
+  },
+  {
+    "id": "chapter-3",
+    "name": "Unit 3 - School",
+    "order": 3,
+    "sentences": [
+      { "id": "s3-1", "content": "I go to school every day.", "translation": "我每天去上学。" },
+      { "id": "s3-2", "content": "My favorite subject is English.", "translation": "我最喜欢的科目是英语。" },
+      { "id": "s3-3", "content": "The teacher is very kind.", "translation": "老师非常和蔼。" },
+      { "id": "s3-4", "content": "We have lunch at noon.", "translation": "我们中午吃午饭。" },
+      { "id": "s3-5", "content": "I like to read books in the library.", "translation": "我喜欢在图书馆看书。" }
+    ]
+  },
+  {
+    "id": "chapter-4",
+    "name": "Unit 4 - Daily Life",
+    "order": 4,
+    "sentences": [
+      { "id": "s4-1", "content": "I wake up at seven o'clock.", "translation": "我七点钟起床。" },
+      { "id": "s4-2", "content": "I brush my teeth and wash my face.", "translation": "我刷牙洗脸。" },
+      { "id": "s4-3", "content": "I have breakfast with my family.", "translation": "我和家人一起吃早餐。" },
+      { "id": "s4-4", "content": "After school, I do my homework.", "translation": "放学后，我做作业。" },
+      { "id": "s4-5", "content": "I go to bed at nine o'clock.", "translation": "我九点钟睡觉。" }
+    ]
+  },
+  {
+    "id": "chapter-5",
+    "name": "Unit 5 - Weather",
+    "order": 5,
+    "sentences": [
+      { "id": "s5-1", "content": "What is the weather like today?", "translation": "今天天气怎么样？" },
+      { "id": "s5-2", "content": "It is sunny and warm.", "translation": "阳光明媚，很温暖。" },
+      { "id": "s5-3", "content": "I like rainy days.", "translation": "我喜欢下雨天。" },
+      { "id": "s5-4", "content": "It is very cold in winter.", "translation": "冬天非常冷。" },
+      { "id": "s5-5", "content": "We can play in the snow.", "translation": "我们可以在雪地里玩。" }
+    ]
+  }
+]
